@@ -9,6 +9,8 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    let loginViewModel: LoginViewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,7 +19,38 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func loginBtnTapped(_ sender: UIButton) {
-        NetworkHandler.getData(resource: "http://demo.jexframe.com/demo_login.jct")
+//        NetworkHandler.getData(resource: "http://demo.jexframe.com/demo_login.jct")
+//        NetworkHandler.getData(resource: "http://demo.jexframe.com/demo_login.jct") { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print("error: \(error)")
+//            case .success(let data):
+//                print("success: \(data)")
+//            }
+//        }
+        
+//        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct", responseType: Response.self) { (result) in
+//            switch result {
+//            case .failure(let error):
+//                print(error)
+//            case .success(let responseObj):
+//                print(responseObj)
+//            }
+//        }
+        
+        
+
+        
+        loginViewModel.requestLogin(usrID: "webcash", usrPW: "1111") { (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                print(data)
+            }
+        }
+        
+//        print(loginViewModel.loginModel)
     }
     
     /*

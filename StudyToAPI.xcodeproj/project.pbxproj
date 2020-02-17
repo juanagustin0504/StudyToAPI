@@ -14,6 +14,11 @@
 		761DBDB323F548FE00EE6055 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761DBDB123F548FE00EE6055 /* LaunchScreen.storyboard */; };
 		76381B9623F61F5100EC4EB5 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76381B9523F61F5100EC4EB5 /* NetworkHandler.swift */; };
 		76381B9823F6220E00EC4EB5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76381B9723F6220E00EC4EB5 /* MainViewController.swift */; };
+		76AA9BB323FA2183008581D0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA9BB223FA2183008581D0 /* Request.swift */; };
+		76AA9BB523FA23F8008581D0 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA9BB423FA23F8008581D0 /* Response.swift */; };
+		76AA9BB923FA48D4008581D0 /* CodableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA9BB823FA48D4008581D0 /* CodableTest.swift */; };
+		76BBAB3623FA8EB600257D6D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */; };
+		76F41C2623F697BE00E33C15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F41C2523F697BE00E33C15 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		761DBDB423F548FE00EE6055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		76381B9523F61F5100EC4EB5 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		76381B9723F6220E00EC4EB5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		76AA9BB223FA2183008581D0 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		76AA9BB423FA23F8008581D0 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		76AA9BB823FA48D4008581D0 /* CodableTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTest.swift; sourceTree = "<group>"; };
+		76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		76F41C2523F697BE00E33C15 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,8 @@
 			children = (
 				761DBDBC23F5492100EE6055 /* Launch */,
 				761DBDBB23F5491600EE6055 /* Main */,
+				76AA9BB123FA2167008581D0 /* Login */,
+				76F41C2423F6975400E33C15 /* DownloadTask */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -116,6 +128,25 @@
 				76381B9523F61F5100EC4EB5 /* NetworkHandler.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		76AA9BB123FA2167008581D0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				76AA9BB223FA2183008581D0 /* Request.swift */,
+				76AA9BB423FA23F8008581D0 /* Response.swift */,
+				76AA9BB823FA48D4008581D0 /* CodableTest.swift */,
+				76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		76F41C2423F6975400E33C15 /* DownloadTask */ = {
+			isa = PBXGroup;
+			children = (
+				76F41C2523F697BE00E33C15 /* Downloader.swift */,
+			);
+			path = DownloadTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,10 +220,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76F41C2623F697BE00E33C15 /* Downloader.swift in Sources */,
+				76AA9BB323FA2183008581D0 /* Request.swift in Sources */,
 				761DBDA723F548FD00EE6055 /* AppDelegate.swift in Sources */,
 				761DBDA923F548FD00EE6055 /* SceneDelegate.swift in Sources */,
 				76381B9623F61F5100EC4EB5 /* NetworkHandler.swift in Sources */,
 				76381B9823F6220E00EC4EB5 /* MainViewController.swift in Sources */,
+				76AA9BB923FA48D4008581D0 /* CodableTest.swift in Sources */,
+				76AA9BB523FA23F8008581D0 /* Response.swift in Sources */,
+				76BBAB3623FA8EB600257D6D /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

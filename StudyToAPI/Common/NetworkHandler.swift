@@ -9,43 +9,96 @@
 import Foundation
 
 class NetworkHandler {
-    class func getData(resource: String) {
-        // 세션 생성, 환경 설정
-        let defaultSession = URLSession(configuration: .default)
+    private static var sharedInstance = NetworkHandler()
+    private static var sessionConfig: URLSessionConfiguration!
+    private static var session: URLSession!
+    
+    static var shared: NetworkHandler = {
         
-        guard let URL = URL(string: "\(resource)") else {
+        // Timeout Configuration
+        sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 120.0
+        sessionConfig.timeoutIntervalForResource = 120.0
+        sessionConfig.urlCache?.removeAllCachedResponses() // clear URL cache
+        session = URLSession(configuration: sessionConfig)
+        return sharedInstance
+    }()
+    
+    func fetch(api: String, body: Request, responseType: Response.Type, completion: @escaping (Result<Response, NSError>) -> Void) {
+        guard let URL = URL(string: api) else {
             print("URL is nil")
             return
         }
         
-        // Request
-        let request = URLRequest(url: URL)
+        var request = URLRequest(url: URL)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONEncoder().encode(body)
         
-        // DataTask
-        let dataTask = defaultSession.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            // getting Data error
-            guard error == nil else {
-                print("Error occur: \(String(describing: error))")
-                return
-            }
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: request) { (data, response, error) in
             
-            guard let data = data, let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                return
-            }
-            
-            // 통신에 성공한 경우 data에 Data 객체가 전달된다.
-            
-            // 받아오는 형태가 json 형태일 경우,
-            // json을 serialize하여 json 데이터를 swift 데이터 타입으로 변환
-            // json serialize란 json 형태를 String으로 만들어 swift에서도 사용할 수 있게 만드는 것
-            guard let jsonToArray = try? JSONSerialization.jsonObject(with: data, options: []) else {
-                print("json to Any error")
-                return
-            }
-            
-            // 원하는 작업
-            print(jsonToArray)
         }
-        dataTask.resume()
+        session.dataTask(with: request) { (data, response, error) in
+            if error != nil {
+                print("error: \(error!)")
+                completion(.failure((error! as NSError)))
+                return
+            }
+            
+            guard let data = data else {
+                print("data error")
+                let dataError = NSError(domain: "", code: 1000, userInfo: [:])
+                completion(.failure(dataError))
+                return
+            }
+            
+            guard let dataString = String(data: data, encoding: .utf8) else { return }
+            print(dataString)
+            guard let decodedDataString = dataString.removingPercentEncoding else { return }
+//            print(decodedDataString)
+            let replaceString = decodedDataString.replacingOccurrences(of: "+", with: "")
+//            print(replaceString)
+            guard let responseDictionary = self.convertToDictionary(jsonString: replaceString) else { return }
+            print(responseDictionary)
+            guard let dataResult = replaceString.data(using: .utf8) else { return }
+            do {
+                let responseObj = try JSONDecoder().decode(responseType, from: dataResult) // Json Object Missmatch
+                print(responseObj)
+                completion(.success(responseObj))
+                return
+            } catch {
+                let decodeError = NSError(domain: "DECODE_ERROR", code: 1001, userInfo: [:])
+//                print("_ERROR_: \(decodeError)")
+                completion(.failure(decodeError))
+            }
+            
+        }.resume()
+        
+        
+    }
+    
+//    func request(api: String) -> URLRequest {
+//        var url: URL!
+//        var request: URLRequest!
+//
+//        url = URL(string: api)
+//        request = URLRequest(url: url)
+//
+//        request.httpMethod = "POST"
+//        request.httpBody = request.httpBody
+//
+//        return request
+//    }
+
+    private func convertToDictionary(jsonString: String) -> [String:Any]? {
+        guard let data = jsonString.data(using: .utf8) else {
+            return nil
+        }
+
+        do {
+            return try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any]
+        } catch {
+            return nil
+        }
     }
 }
