@@ -21,7 +21,6 @@ struct AccountInquiryModel {
         let ACCT_BAL        : String
         let WDRW_POSS_AMT   : String
         let ACCT_NEW_DT     : String
-        
     }
     
 }

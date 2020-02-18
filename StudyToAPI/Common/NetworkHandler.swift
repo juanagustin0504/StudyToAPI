@@ -29,9 +29,7 @@ class NetworkHandler {
         request.httpBody = try? JSONEncoder().encode(body)
         
         let session = URLSession(configuration: .default)
-        session.dataTask(with: request) { (data, response, error) in
-            
-        }
+        
         session.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 print("error: \(error!)")
@@ -47,21 +45,21 @@ class NetworkHandler {
             }
             
             guard let dataString = String(data: data, encoding: .utf8) else { return }
-            print(dataString)
             guard let decodedDataString = dataString.removingPercentEncoding else { return }
-//            print(decodedDataString)
+            
             let replaceString = decodedDataString.replacingOccurrences(of: "+", with: "")
-//            print(replaceString)
-            guard let responseDictionary = self.convertToDictionary(jsonString: replaceString) else { return }
-            print(responseDictionary)
+            
+//            guard let responseDictionary = self.convertToDictionary(jsonString: replaceString) else { return }
+//            print(responseDictionary)
+            
             guard let dataResult = replaceString.data(using: .utf8) else { return }
             do {
-                let responseObj = try JSONDecoder().decode(responseType, from: dataResult) // Json Object Missmatch
-                print(responseObj)
+                let responseObj = try JSONDecoder().decode(responseType, from: dataResult) // Json Objects and Response Missmatch
+//                print(responseObj)
                 completion(.success(responseObj))
                 return
             } catch {
-                let decodeError = NSError(domain: "DECODE_ERROR", code: 1001, userInfo: [:])
+                let decodeError = NSError(domain: "Response mismatch with JSON object", code: 1001, userInfo: [:])
 //                print("_ERROR_: \(decodeError)")
                 completion(.failure(decodeError))
             }

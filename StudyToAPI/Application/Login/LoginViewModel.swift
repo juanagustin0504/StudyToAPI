@@ -15,6 +15,8 @@ class LoginViewModel {
     func requestLogin(usrID: String, usrPW: String, completion: @escaping (NSError?) -> Void) {
         
         let reqBody = LoginModel.Request(USER_ID: usrID, USER_PW: usrPW)
+        print("============================REQEUST============================")
+        print(reqBody)
         
         NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct", body: reqBody, responseType: LoginModel.Response.self) { (result) in
             
@@ -23,6 +25,7 @@ class LoginViewModel {
                 print(error)
                 completion(error)
             case .success(let responseObj):
+                print("============================RESPONSE============================")
                 print(responseObj)
                 self.loginModel = responseObj
                 completion(nil)

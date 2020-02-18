@@ -10,11 +10,11 @@ import Foundation
 
 class AccountInquiryViewModel {
     
-    private var responseObj: AccountInquiryModel.Response? = nil
+    var responseObj: AccountInquiryModel.Response? = nil
     
-    func requsetAccountInquiry(api: String, ACCT_NO: String, completion: @escaping (NSError?) -> Void) {
+    func requsetAccountInquiry(ACCT_NO: String, completion: @escaping (NSError?) -> Void) {
         let reqBody = AccountInquiryModel.Request(ACCT_NO: ACCT_NO)
-        NetworkHandler.shared.fetch(api: api, body: reqBody, responseType: AccountInquiryModel.Response.self) { (result) in
+        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/poc_amount_single_view.jct", body: reqBody, responseType: AccountInquiryModel.Response.self) { (result) in
             switch result {
             case .failure(let error):
                 completion(error)

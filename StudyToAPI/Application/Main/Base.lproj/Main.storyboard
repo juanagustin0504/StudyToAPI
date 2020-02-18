@@ -16,28 +16,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-TX-3xK">
-                                <rect key="frame" x="134" y="207" width="107" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-TX-3xK">
+                                <rect key="frame" x="0.0" y="222" width="375" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xQ-aw-QrA"/>
+                                    <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yaw-kf-45Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-f8-Lyy">
-                                <rect key="frame" x="134" y="313" width="107" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3v-f8-Lyy">
+                                <rect key="frame" x="145.5" y="313" width="84" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="계좌조회"/>
                                 <connections>
-                                    <action selector="loginBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoP-Pl-kKS"/>
+                                    <action selector="accountInquiryBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P22-nt-baY"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRW-kX-JJ1">
+                                <rect key="frame" x="20" y="84" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-VN-GIc">
+                                <rect key="frame" x="20" y="138" width="335" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rc-MA-qdL">
+                                <rect key="frame" x="0.0" y="384" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌번호" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ6-4V-j7q">
+                                <rect key="frame" x="0.0" y="425" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌타입(1: 자유입출계좌, 2: 대출계좌)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzO-4L-vTM">
+                                <rect key="frame" x="0.0" y="466" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌잔액" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na9-ih-hbn">
+                                <rect key="frame" x="0.0" y="507" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="출금가능잔액" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbC-Xx-lL6">
+                                <rect key="frame" x="0.0" y="548" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계좌생성일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blX-gg-zPp">
+                                <rect key="frame" x="0.0" y="589" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dRW-kX-JJ1" secondAttribute="trailing" constant="20" id="31T-b4-feq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Na9-ih-hbn" secondAttribute="trailing" id="46R-87-cUb"/>
+                            <constraint firstItem="OzO-4L-vTM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9P5-bC-0S9"/>
+                            <constraint firstItem="OzO-4L-vTM" firstAttribute="top" secondItem="nQ6-4V-j7q" secondAttribute="bottom" constant="20" id="HGO-ty-8Sk"/>
+                            <constraint firstItem="nQ6-4V-j7q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Iq4-2U-4wv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="blX-gg-zPp" secondAttribute="trailing" id="JnL-gu-MWv"/>
+                            <constraint firstItem="HCg-TX-3xK" firstAttribute="top" secondItem="nz5-VN-GIc" secondAttribute="bottom" constant="50" id="Lbv-Gd-V0K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OzO-4L-vTM" secondAttribute="trailing" id="Llh-i9-qj4"/>
+                            <constraint firstItem="f3v-f8-Lyy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Od5-hU-mQS"/>
+                            <constraint firstItem="blX-gg-zPp" firstAttribute="top" secondItem="IbC-Xx-lL6" secondAttribute="bottom" constant="20" id="T1b-7j-KkQ"/>
+                            <constraint firstItem="f3v-f8-Lyy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tpz-Nl-AcJ"/>
+                            <constraint firstItem="IbC-Xx-lL6" firstAttribute="top" secondItem="Na9-ih-hbn" secondAttribute="bottom" constant="20" id="UEA-fQ-6iP"/>
+                            <constraint firstItem="blX-gg-zPp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VAq-uj-mtw"/>
+                            <constraint firstItem="dRW-kX-JJ1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WS5-Z5-TbX"/>
+                            <constraint firstItem="nz5-VN-GIc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aBR-wh-ama"/>
+                            <constraint firstItem="f3v-f8-Lyy" firstAttribute="top" secondItem="HCg-TX-3xK" secondAttribute="bottom" constant="50" id="cHE-Bn-Epo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HCg-TX-3xK" secondAttribute="trailing" id="evE-RI-3tw"/>
+                            <constraint firstItem="Na9-ih-hbn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fiq-eB-cUF"/>
+                            <constraint firstItem="IbC-Xx-lL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gXX-vM-Jqq"/>
+                            <constraint firstItem="Na9-ih-hbn" firstAttribute="top" secondItem="OzO-4L-vTM" secondAttribute="bottom" constant="20" id="ggm-9i-X7g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nQ6-4V-j7q" secondAttribute="trailing" id="heZ-FM-A1n"/>
+                            <constraint firstItem="nz5-VN-GIc" firstAttribute="top" secondItem="dRW-kX-JJ1" secondAttribute="bottom" constant="20" id="iBP-DS-npy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IbC-Xx-lL6" secondAttribute="trailing" id="jdp-Z3-aEm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nz5-VN-GIc" secondAttribute="trailing" constant="20" id="k9g-g9-11I"/>
+                            <constraint firstItem="nQ6-4V-j7q" firstAttribute="top" secondItem="5Rc-MA-qdL" secondAttribute="bottom" constant="20" id="l1v-jb-zZ3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Rc-MA-qdL" secondAttribute="trailing" id="oTn-Qs-SMY"/>
+                            <constraint firstItem="5Rc-MA-qdL" firstAttribute="top" secondItem="f3v-f8-Lyy" secondAttribute="bottom" constant="30" id="qmw-XU-6lZ"/>
+                            <constraint firstItem="HCg-TX-3xK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rnj-sn-fUZ"/>
+                            <constraint firstItem="5Rc-MA-qdL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xig-ZW-Wew"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="acctBal" destination="Na9-ih-hbn" id="rd1-YY-t0R"/>
+                        <outlet property="acctNewDt" destination="blX-gg-zPp" id="Nzb-ID-HOv"/>
+                        <outlet property="acctNo" destination="nQ6-4V-j7q" id="mTL-QM-zlO"/>
+                        <outlet property="acctTp" destination="OzO-4L-vTM" id="yg1-kg-UqQ"/>
+                        <outlet property="idText" destination="dRW-kX-JJ1" id="5FF-p8-DSJ"/>
+                        <outlet property="loginBtn" destination="HCg-TX-3xK" id="ZQZ-rw-KEZ"/>
+                        <outlet property="pwText" destination="nz5-VN-GIc" id="csc-Mn-FbP"/>
+                        <outlet property="usrID" destination="5Rc-MA-qdL" id="A0B-r2-Mal"/>
+                        <outlet property="wdrwPossAmt" destination="IbC-Xx-lL6" id="DLw-CR-25O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
