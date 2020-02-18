@@ -34,6 +34,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        idText.delegate = self
+        pwText.delegate = self
     }
     
     
@@ -62,15 +64,11 @@ class MainViewController: UIViewController {
                 }
             case "1":
                 DispatchQueue.main.async {
-                    self.idText.shake {
-                        self.idText.layer.borderColor = UIColor.black.cgColor
-                    }
+                    self.idText.shake()
                 }
             case "2":
                 DispatchQueue.main.async {
-                    self.pwText.shake() {
-                        
-                    }
+                    self.pwText.shake()
                 }
             default:
                 self.showAlert(message: "그 밖의 오류")
@@ -124,9 +122,14 @@ class MainViewController: UIViewController {
 }
 
 //MARK: - extension -
+extension MainViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.clear.cgColor
+    }
+}
+
 extension UITextField {
-    func shake(completion: @escaping () -> Void) {
-        
+    func shake() {
         self.border(color: UIColor.red)
         
         let animation = CABasicAnimation(keyPath: "position")
