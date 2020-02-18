@@ -123,7 +123,7 @@ class MainViewController: UIViewController {
 
 //MARK: - extension -
 extension MainViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.clear.cgColor
     }
 }
