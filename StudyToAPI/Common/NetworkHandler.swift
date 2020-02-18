@@ -14,17 +14,11 @@ class NetworkHandler {
     private static var session: URLSession!
     
     static var shared: NetworkHandler = {
-        
-        // Timeout Configuration
         sessionConfig = URLSessionConfiguration.default
-        sessionConfig.timeoutIntervalForRequest = 120.0
-        sessionConfig.timeoutIntervalForResource = 120.0
-        sessionConfig.urlCache?.removeAllCachedResponses() // clear URL cache
-        session = URLSession(configuration: sessionConfig)
         return sharedInstance
     }()
     
-    func fetch(api: String, body: Request, responseType: Response.Type, completion: @escaping (Result<Response, NSError>) -> Void) {
+    func fetch<I: Encodable, O: Decodable>(api: String, body: I, responseType: O.Type, completion: @escaping (Result<O, NSError>) -> Void) {
         guard let URL = URL(string: api) else {
             print("URL is nil")
             return

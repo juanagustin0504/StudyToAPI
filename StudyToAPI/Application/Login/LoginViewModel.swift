@@ -10,20 +10,22 @@ import Foundation
 
 class LoginViewModel {
     
-    var loginModel: Response!
+    var loginModel: LoginModel.Response? = nil
     
-    func requestLogin(usrID: String, usrPW: String, completion: @escaping (Result<Response, NSError>) -> Void) {
+    func requestLogin(usrID: String, usrPW: String, completion: @escaping (NSError?) -> Void) {
         
-        let reqBody = Request(USER_ID: usrID, USER_PW: usrPW)
+        let reqBody = LoginModel.Request(USER_ID: usrID, USER_PW: usrPW)
         
-        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct", body: reqBody, responseType: Response.self) { (result) in
+        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct", body: reqBody, responseType: LoginModel.Response.self) { (result) in
             
             switch result {
             case .failure(let error):
                 print(error)
+                completion(error)
             case .success(let responseObj):
                 print(responseObj)
                 self.loginModel = responseObj
+                completion(nil)
             }
         }
     }
