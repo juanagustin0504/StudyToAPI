@@ -10,8 +10,8 @@ import Foundation
 
 struct LoginModel {
     struct Request: Encodable {
-        let USER_ID: String
-        let USER_PW: String
+        let USR_ID: String
+        let USR_PW: String
     }
     
     struct Response: Decodable {

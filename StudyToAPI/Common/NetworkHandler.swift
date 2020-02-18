@@ -25,6 +25,7 @@ class NetworkHandler {
         }
         
         var request = URLRequest(url: URL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")  // the request is JSON
         request.httpMethod = "POST"
         request.httpBody = try? JSONEncoder().encode(body)
         

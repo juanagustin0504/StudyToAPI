@@ -14,7 +14,7 @@ class LoginViewModel {
     
     func requestLogin(usrID: String, usrPW: String, completion: @escaping (NSError?) -> Void) {
         
-        let reqBody = LoginModel.Request(USER_ID: usrID, USER_PW: usrPW)
+        let reqBody = LoginModel.Request(USR_ID: usrID, USR_PW: usrPW)
         print("============================REQEUST============================")
         print(reqBody)
         
