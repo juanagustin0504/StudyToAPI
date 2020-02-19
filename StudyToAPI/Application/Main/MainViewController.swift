@@ -54,13 +54,19 @@ class MainViewController: UIViewController {
 
             switch self.loginViewModel.loginModel?.RESULT_TP {
             case "0":
+                let action = UIAlertAction(title: "OK", style: .default) { (action) in
+                    let imgPickerSb = UIStoryboard(name: "ImagePicker", bundle: nil)
+                    let imgPickerVc = imgPickerSb.instantiateViewController(withIdentifier: "ImagePickerViewController") as! ImagePickerViewController
+                    self.navigationController?.pushViewController(imgPickerVc, animated: true)
+                }
                 DispatchQueue.main.async {
-                    self.showAlert(message: "로그인 성공")
+                    self.showAlert(message: "로그인 성공", action: action)
 
                     self.loginBtn.setTitle(self.loginViewModel.loginModel?.USR_NM, for: .normal)
                     self.idText.isEnabled = false
                     self.pwText.isEnabled = false
                     self.loginBtn.isEnabled = false
+                    
                 }
             case "1":
                 DispatchQueue.main.async {
@@ -108,7 +114,7 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - custom method -
-    func showAlert(title: String = "알림", message: String) {
+    func showAlert(_ title: String = "알림", message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
@@ -117,6 +123,15 @@ class MainViewController: UIViewController {
             self.present(alert, animated: true)
         }
         
+    }
+    
+    func showAlert(title: String = "알림", message: String, action: UIAlertAction) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(action)
+        
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
     }
 
 }

@@ -17,8 +17,9 @@
 		76AA9BB323FA2183008581D0 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AA9BB223FA2183008581D0 /* LoginModel.swift */; };
 		76B904DB23FB606000CB91D3 /* AccountInquiryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904DA23FB606000CB91D3 /* AccountInquiryModel.swift */; };
 		76B904DD23FB613F00CB91D3 /* AccountInquiryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904DC23FB613F00CB91D3 /* AccountInquiryViewModel.swift */; };
+		76B904E023FCB7EF00CB91D3 /* ImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */; };
+		76B904E223FCB7FE00CB91D3 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */; };
 		76BBAB3623FA8EB600257D6D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */; };
-		76F41C2623F697BE00E33C15 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F41C2523F697BE00E33C15 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,9 @@
 		76AA9BB223FA2183008581D0 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		76B904DA23FB606000CB91D3 /* AccountInquiryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInquiryModel.swift; sourceTree = "<group>"; };
 		76B904DC23FB613F00CB91D3 /* AccountInquiryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInquiryViewModel.swift; sourceTree = "<group>"; };
+		76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePicker.storyboard; sourceTree = "<group>"; };
+		76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		76F41C2523F697BE00E33C15 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,7 @@
 			children = (
 				761DBDBC23F5492100EE6055 /* Launch */,
 				761DBDBB23F5491600EE6055 /* Main */,
-				76AA9BB123FA2167008581D0 /* Login */,
-				76B904D923FB5FF000CB91D3 /* AccountInquiry */,
-				76F41C2423F6975400E33C15 /* DownloadTask */,
+				76B904DE23FCB7A100CB91D3 /* ImagePicker */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -93,6 +93,8 @@
 			children = (
 				761DBDAC23F548FD00EE6055 /* Main.storyboard */,
 				76381B9723F6220E00EC4EB5 /* MainViewController.swift */,
+				76AA9BB123FA2167008581D0 /* Login */,
+				76B904D923FB5FF000CB91D3 /* AccountInquiry */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -149,12 +151,13 @@
 			path = AccountInquiry;
 			sourceTree = "<group>";
 		};
-		76F41C2423F6975400E33C15 /* DownloadTask */ = {
+		76B904DE23FCB7A100CB91D3 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				76F41C2523F697BE00E33C15 /* Downloader.swift */,
+				76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */,
+				76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */,
 			);
-			path = DownloadTask;
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +220,7 @@
 			files = (
 				761DBDB323F548FE00EE6055 /* LaunchScreen.storyboard in Resources */,
 				761DBDB023F548FE00EE6055 /* Assets.xcassets in Resources */,
+				76B904E023FCB7EF00CB91D3 /* ImagePicker.storyboard in Resources */,
 				761DBDAE23F548FD00EE6055 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76F41C2623F697BE00E33C15 /* Downloader.swift in Sources */,
+				76B904E223FCB7FE00CB91D3 /* ImagePickerViewController.swift in Sources */,
 				76AA9BB323FA2183008581D0 /* LoginModel.swift in Sources */,
 				761DBDA723F548FD00EE6055 /* AppDelegate.swift in Sources */,
 				76B904DB23FB606000CB91D3 /* AccountInquiryModel.swift in Sources */,

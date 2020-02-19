@@ -63,5 +63,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>This app wants to take a Picture.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app wants to use your photos.</string>
 </dict>
 </plist>
