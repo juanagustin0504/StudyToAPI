@@ -119,7 +119,6 @@
                         <outlet property="acctNo" destination="nQ6-4V-j7q" id="mTL-QM-zlO"/>
                         <outlet property="acctTp" destination="OzO-4L-vTM" id="yg1-kg-UqQ"/>
                         <outlet property="idText" destination="dRW-kX-JJ1" id="5FF-p8-DSJ"/>
-                        <outlet property="loginBtn" destination="HCg-TX-3xK" id="ZQZ-rw-KEZ"/>
                         <outlet property="pwText" destination="nz5-VN-GIc" id="csc-Mn-FbP"/>
                         <outlet property="usrID" destination="5Rc-MA-qdL" id="A0B-r2-Mal"/>
                         <outlet property="wdrwPossAmt" destination="IbC-Xx-lL6" id="DLw-CR-25O"/>

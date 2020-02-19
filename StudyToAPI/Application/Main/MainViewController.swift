@@ -84,7 +84,7 @@ class MainViewController: UIViewController {
             if error != nil {
                 print("Account Inquiry Error : \(String(describing: error))")
                 DispatchQueue.main.async {
-                    self.showAlert(message: "Account Inquiry Error : \(String(describing: error))")
+                    self.showAlert(message: "로그인 후 계좌조회가 가능합니다.")
                 }
                 return
             }
