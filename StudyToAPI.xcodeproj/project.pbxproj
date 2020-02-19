@@ -19,6 +19,7 @@
 		76B904DD23FB613F00CB91D3 /* AccountInquiryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904DC23FB613F00CB91D3 /* AccountInquiryViewModel.swift */; };
 		76B904E023FCB7EF00CB91D3 /* ImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */; };
 		76B904E223FCB7FE00CB91D3 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */; };
+		76B904E923FCF20B00CB91D3 /* ImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B904E823FCF20B00CB91D3 /* ImagePickerCell.swift */; };
 		76BBAB3623FA8EB600257D6D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		76B904DC23FB613F00CB91D3 /* AccountInquiryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInquiryViewModel.swift; sourceTree = "<group>"; };
 		76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePicker.storyboard; sourceTree = "<group>"; };
 		76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		76B904E823FCF20B00CB91D3 /* ImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCell.swift; sourceTree = "<group>"; };
 		76BBAB3523FA8EB600257D6D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,8 +158,17 @@
 			children = (
 				76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */,
 				76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */,
+				76B904E523FCF1D000CB91D3 /* CustomCell */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		76B904E523FCF1D000CB91D3 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				76B904E823FCF20B00CB91D3 /* ImagePickerCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				76381B9823F6220E00EC4EB5 /* MainViewController.swift in Sources */,
 				76B904DD23FB613F00CB91D3 /* AccountInquiryViewModel.swift in Sources */,
 				76BBAB3623FA8EB600257D6D /* LoginViewModel.swift in Sources */,
+				76B904E923FCF20B00CB91D3 /* ImagePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

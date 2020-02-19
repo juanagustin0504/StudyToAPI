@@ -9,13 +9,26 @@
 import UIKit
 
 class ImagePickerViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var imgArr: [UIImage] = []
+    
+    let picker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        picker.delegate = self
     }
     
+    func openLibrary() {
+        picker.sourceType = .photoLibrary
+        picker.modalPresentationStyle = .fullScreen
+        present(picker, animated: true)
+        
+    }
     
     /*
     // MARK: - Navigation
@@ -27,4 +40,52 @@ class ImagePickerViewController: UIViewController {
     }
     */
 
+}
+
+extension ImagePickerViewController: UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == imgArr.count {
+            self.openLibrary()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240.0
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            imgArr.append(image)
+            dismiss(animated: true) {
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+}
+
+extension ImagePickerViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return imgArr.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ImagePickerCell", for: indexPath) as? ImagePickerCell else {
+            return UITableViewCell()
+        }
+        
+        if indexPath.row == imgArr.count {
+            cell.pickedImageView.image = UIImage(named: "bigCameraIcon.png")
+        } else {
+            cell.pickedImageView.image = imgArr[indexPath.row]
+        }
+        
+        return cell
+    }
+    
+    
 }
