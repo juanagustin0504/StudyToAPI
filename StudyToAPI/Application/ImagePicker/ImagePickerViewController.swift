@@ -12,7 +12,7 @@ class ImagePickerViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var imgArr: [UIImage] = []
+    var imgArr: [UIImage?] = []
     
     let picker = UIImagePickerController()
 
@@ -42,11 +42,22 @@ class ImagePickerViewController: UIViewController {
 
 }
 
+//MARK: - extension -
 extension ImagePickerViewController: UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == imgArr.count {
             self.openLibrary()
+        } else {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageViewController") as! ShowImageViewController
+            vc.modalPresentationStyle = .fullScreen
+
+            guard imgArr[indexPath.row] != nil else {
+                return
+            }
+            
+            vc.previewImg = imgArr[indexPath.row]
+            self.present(vc, animated: true)
         }
     }
     
