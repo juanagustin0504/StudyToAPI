@@ -29,15 +29,15 @@
                                     <constraint firstAttribute="width" constant="240" id="4if-ZA-X5y"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ImagePickerCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="240" id="7AR-Cx-nUu" customClass="ImagePickerCell" customModule="StudyToAPI" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="240"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ImagePickerCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ImagePickerCell" rowHeight="135" id="7AR-Cx-nUu" customClass="ImagePickerCell" customModule="StudyToAPI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="135"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7AR-Cx-nUu" id="wlA-Fr-hNu">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Y3-33-RPq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="135"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -79,7 +79,6 @@
         <!--Preview Image View Controller-->
         <scene sceneID="B38-zo-FO3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-eB-mAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="PreviewImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xRs-AC-pnz" customClass="PreviewImageViewController" customModule="StudyToAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3SW-Vk-JQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -110,45 +109,24 @@
                                     <constraint firstAttribute="height" constant="56" id="j9n-XP-I0f"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-h9-E8l">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-OT-Kfu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="vRS-Bm-u8T" appends="YES" id="T8r-EZ-K4C"/>
-                                        </connections>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9Ow-OT-Kfu" secondAttribute="bottom" id="bfK-zS-alB"/>
-                                    <constraint firstItem="9Ow-OT-Kfu" firstAttribute="top" secondItem="KSx-h9-E8l" secondAttribute="top" id="sef-9C-qrM"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Ow-OT-Kfu" secondAttribute="trailing" id="vKm-kh-uRM"/>
-                                    <constraint firstItem="9Ow-OT-Kfu" firstAttribute="leading" secondItem="KSx-h9-E8l" secondAttribute="leading" id="wwc-N3-10t"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="KSx-h9-E8l" firstAttribute="top" secondItem="PIc-6t-B94" secondAttribute="bottom" id="DWB-Qi-Dee"/>
                             <constraint firstItem="PIc-6t-B94" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="KuX-Hy-3JQ"/>
                             <constraint firstItem="PIc-6t-B94" firstAttribute="top" secondItem="irc-JN-Id7" secondAttribute="top" id="Qfx-1V-seH"/>
                             <constraint firstItem="PIc-6t-B94" firstAttribute="trailing" secondItem="irc-JN-Id7" secondAttribute="trailing" id="b4M-0W-UbJ"/>
-                            <constraint firstItem="KSx-h9-E8l" firstAttribute="trailing" secondItem="irc-JN-Id7" secondAttribute="trailing" id="kNd-Ya-rw8"/>
-                            <constraint firstItem="KSx-h9-E8l" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="nTq-Ic-3BL"/>
-                            <constraint firstItem="KSx-h9-E8l" firstAttribute="bottom" secondItem="irc-JN-Id7" secondAttribute="bottom" id="tWJ-5L-Jr1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="irc-JN-Id7"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="bbM-1G-Qek" appends="YES" id="oLr-3x-Uvz"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="imageScrollView" destination="KSx-h9-E8l" id="34w-ss-1rs"/>
-                        <outlet property="imageView" destination="9Ow-OT-Kfu" id="qkY-WK-PCM"/>
-                    </connections>
                 </viewController>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="vRS-Bm-u8T">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-eB-mAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="bbM-1G-Qek">
                     <connections>
-                        <action selector="doubleTapImage:" destination="xRs-AC-pnz" id="x5f-Vi-cMu"/>
+                        <action selector="doubleTapImage:" destination="xRs-AC-pnz" id="hsM-QN-gh9"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

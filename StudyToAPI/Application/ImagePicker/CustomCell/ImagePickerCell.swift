@@ -11,6 +11,7 @@ import UIKit
 class ImagePickerCell: UITableViewCell {
     
     @IBOutlet weak var pickedImageView: UIImageView!
+//    @IBOutlet weak var delImgButton: UIButton!
     
 
     override func awakeFromNib() {

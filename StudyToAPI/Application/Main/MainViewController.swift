@@ -27,12 +27,12 @@ class MainViewController: UIViewController {
     //MARK: - view model -
     let loginViewModel: LoginViewModel = LoginViewModel()
     let accountInquiryViewModel: AccountInquiryViewModel = AccountInquiryViewModel()
-
+    
     
     //MARK: - life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         idText.delegate = self
         pwText.delegate = self
@@ -45,13 +45,13 @@ class MainViewController: UIViewController {
         guard let userId = idText.text, let userPw = pwText.text else {
             return
         }
-
+        
         loginViewModel.requestLogin(usrID: userId, usrPW: userPw) { (error) in
             if error != nil {
                 self.showAlert(message: "error: \(String(describing: error))")
                 return
             }
-
+            
             switch self.loginViewModel.loginModel?.RESULT_TP {
             case "0":
                 let action = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -61,7 +61,7 @@ class MainViewController: UIViewController {
                 }
                 DispatchQueue.main.async {
                     self.showAlert(message: "로그인 성공", action: action)
-
+                    
                     self.loginBtn.setTitle(self.loginViewModel.loginModel?.USR_NM, for: .normal)
                     self.idText.isEnabled = false
                     self.pwText.isEnabled = false
@@ -79,7 +79,7 @@ class MainViewController: UIViewController {
             default:
                 self.showAlert(message: "그 밖의 오류")
             }
-
+            
         }
         
     }
@@ -110,7 +110,7 @@ class MainViewController: UIViewController {
             
             
         }
-         
+        
     }
     
     //MARK: - custom method -
@@ -133,13 +133,26 @@ class MainViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
-
+    
 }
 
 //MARK: - extension -
 extension MainViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         textField.layer.borderColor = UIColor.clear.cgColor
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 1 {
+            let currentText = textField.text ?? ""
+            guard let stringRange = Range(range, in: currentText) else { return false }
+            
+            let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+            
+            return updatedText.count <= 4
+        }
+        
+        return true
     }
 }
 

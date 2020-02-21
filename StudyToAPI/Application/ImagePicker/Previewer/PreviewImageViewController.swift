@@ -10,17 +10,28 @@ import UIKit
 
 class PreviewImageViewController: UIViewController {
 
-    @IBOutlet weak var imageScrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView! {
-        didSet {
-            self.imageView.image = previewImage
-        }
-    }
+//    @IBOutlet weak var imageScrollView: UIScrollView!
+//    @IBOutlet weak var imageView: UIImageView! {
+//        didSet {
+//            self.imageView.image = previewImage
+//        }
+//    }
+    
+    var imageScrollView: UIScrollView!
+    var imageView: UIImageView!
     
     var previewImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        imageView = UIImageView(frame: imageScrollView.frame)
+        imageView.image = previewImage
+        imageView.isUserInteractionEnabled = true
+//        imageScrollView.insertSubview(imageView, at: 0)
+        imageScrollView.addSubview(imageView)
+        view.addSubview(imageScrollView)
         
         imageScrollView.delegate = self
     }
@@ -67,7 +78,7 @@ class PreviewImageViewController: UIViewController {
     
     @IBAction func doubleTapImage(_ sender: UITapGestureRecognizer) {
         if imageScrollView.zoomScale == imageScrollView.minimumZoomScale {
-            imageScrollView.zoom(to: zoomRectangle(scale: imageScrollView.maximumZoomScale, center: sender.location(in: sender.view)), animated: true)
+            imageScrollView.zoom(to: zoomRectangle(scale: imageScrollView.maximumZoomScale, center: sender.location(in: imageView)), animated: true)
         } else {
             imageScrollView.setZoomScale(imageScrollView.minimumZoomScale, animated: true)
         }

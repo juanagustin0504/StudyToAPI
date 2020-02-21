@@ -30,16 +30,10 @@ class ImagePickerViewController: UIViewController {
         
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+//    @IBAction func delButtonTapped(_ sender: UIButton) {
+//        
+//    }
+    
 }
 
 //MARK: - extension -
@@ -93,8 +87,10 @@ extension ImagePickerViewController: UITableViewDataSource {
         
         if indexPath.row == imgArr.count {
             cell.pickedImageView.image = UIImage(named: "bigCameraIcon.png")
+//            cell.delImgButton.isHidden = true
         } else {
             cell.pickedImageView.image = imgArr[indexPath.row]
+//            cell.delImgButton.isHidden = false
         }
         
         return cell
