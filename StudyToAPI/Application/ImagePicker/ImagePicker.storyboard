@@ -76,75 +76,86 @@
             </objects>
             <point key="canvasLocation" x="93.599999999999994" y="8.5457271364317844"/>
         </scene>
-        <!--Show Image View Controller-->
+        <!--Preview Image View Controller-->
         <scene sceneID="B38-zo-FO3">
             <objects>
-                <viewController storyboardIdentifier="ShowImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xRs-AC-pnz" customClass="ShowImageViewController" customModule="StudyToAPI" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-eB-mAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PreviewImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xRs-AC-pnz" customClass="PreviewImageViewController" customModule="StudyToAPI" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3SW-Vk-JQ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0vE-sN-Wgu">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PIc-6t-B94">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q0-uB-BBH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-WX-9Tb">
                                         <rect key="frame" x="335" y="15" width="30" height="25.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="0Zj-s0-abj"/>
-                                            <constraint firstAttribute="height" constant="30" id="eHp-aH-N1j"/>
+                                            <constraint firstAttribute="width" constant="30" id="1jP-Oj-92x"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Q8s-IX-kZl"/>
+                                            <constraint firstAttribute="height" constant="30" id="W6S-vs-aX9"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="Xv9-cS-22t"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="xmark" catalog="system"/>
                                         <connections>
-                                            <action selector="closeBtnTapped:" destination="xRs-AC-pnz" eventType="touchUpInside" id="Cpy-ca-MSg"/>
+                                            <action selector="closePreviewer:" destination="xRs-AC-pnz" eventType="touchUpInside" id="IzP-yN-skC"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy9-Ax-fux">
-                                        <rect key="frame" x="10" y="12" width="30" height="30.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ZXl-P3-ZvP"/>
-                                            <constraint firstAttribute="width" constant="30" id="bbG-3x-Kay"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="trash" catalog="system"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.51764705879999995" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="5q0-uB-BBH" secondAttribute="trailing" constant="10" id="4MV-u3-e1e"/>
-                                    <constraint firstItem="5q0-uB-BBH" firstAttribute="centerY" secondItem="0vE-sN-Wgu" secondAttribute="centerY" id="KQF-uj-OHv"/>
-                                    <constraint firstAttribute="height" constant="56" id="RAP-2p-qD5"/>
-                                    <constraint firstItem="Yy9-Ax-fux" firstAttribute="leading" secondItem="0vE-sN-Wgu" secondAttribute="leading" constant="10" id="bcR-a6-Lvn"/>
-                                    <constraint firstItem="Yy9-Ax-fux" firstAttribute="centerY" secondItem="0vE-sN-Wgu" secondAttribute="centerY" id="edz-V9-qNd"/>
+                                    <constraint firstItem="4lQ-WX-9Tb" firstAttribute="centerY" secondItem="PIc-6t-B94" secondAttribute="centerY" id="cvt-aU-eHO"/>
+                                    <constraint firstAttribute="trailing" secondItem="4lQ-WX-9Tb" secondAttribute="trailing" constant="10" id="eMX-UV-Txy"/>
+                                    <constraint firstAttribute="height" constant="56" id="j9n-XP-I0f"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dL7-mR-ok4">
-                                <rect key="frame" x="0.0" y="56" width="375" height="611"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="KSx-h9-E8l">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ow-OT-Kfu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="vRS-Bm-u8T" appends="YES" id="T8r-EZ-K4C"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9Ow-OT-Kfu" secondAttribute="bottom" id="bfK-zS-alB"/>
+                                    <constraint firstItem="9Ow-OT-Kfu" firstAttribute="top" secondItem="KSx-h9-E8l" secondAttribute="top" id="sef-9C-qrM"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ow-OT-Kfu" secondAttribute="trailing" id="vKm-kh-uRM"/>
+                                    <constraint firstItem="9Ow-OT-Kfu" firstAttribute="leading" secondItem="KSx-h9-E8l" secondAttribute="leading" id="wwc-N3-10t"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="irc-JN-Id7" firstAttribute="trailing" secondItem="dL7-mR-ok4" secondAttribute="trailing" id="E7W-4e-JPv"/>
-                            <constraint firstItem="dL7-mR-ok4" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="HWb-kL-Abk"/>
-                            <constraint firstItem="dL7-mR-ok4" firstAttribute="top" secondItem="0vE-sN-Wgu" secondAttribute="bottom" id="Rbb-Z1-spz"/>
-                            <constraint firstItem="0vE-sN-Wgu" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="b5P-jE-nsX"/>
-                            <constraint firstItem="0vE-sN-Wgu" firstAttribute="top" secondItem="irc-JN-Id7" secondAttribute="top" id="vPG-PM-xEb"/>
-                            <constraint firstAttribute="trailing" secondItem="0vE-sN-Wgu" secondAttribute="trailing" id="xIV-9w-TFT"/>
-                            <constraint firstItem="irc-JN-Id7" firstAttribute="bottom" secondItem="dL7-mR-ok4" secondAttribute="bottom" id="ySG-OP-Aay"/>
+                            <constraint firstItem="KSx-h9-E8l" firstAttribute="top" secondItem="PIc-6t-B94" secondAttribute="bottom" id="DWB-Qi-Dee"/>
+                            <constraint firstItem="PIc-6t-B94" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="KuX-Hy-3JQ"/>
+                            <constraint firstItem="PIc-6t-B94" firstAttribute="top" secondItem="irc-JN-Id7" secondAttribute="top" id="Qfx-1V-seH"/>
+                            <constraint firstItem="PIc-6t-B94" firstAttribute="trailing" secondItem="irc-JN-Id7" secondAttribute="trailing" id="b4M-0W-UbJ"/>
+                            <constraint firstItem="KSx-h9-E8l" firstAttribute="trailing" secondItem="irc-JN-Id7" secondAttribute="trailing" id="kNd-Ya-rw8"/>
+                            <constraint firstItem="KSx-h9-E8l" firstAttribute="leading" secondItem="irc-JN-Id7" secondAttribute="leading" id="nTq-Ic-3BL"/>
+                            <constraint firstItem="KSx-h9-E8l" firstAttribute="bottom" secondItem="irc-JN-Id7" secondAttribute="bottom" id="tWJ-5L-Jr1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="irc-JN-Id7"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="dL7-mR-ok4" id="0IF-yr-Kgz"/>
+                        <outlet property="imageScrollView" destination="KSx-h9-E8l" id="34w-ss-1rs"/>
+                        <outlet property="imageView" destination="9Ow-OT-Kfu" id="qkY-WK-PCM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-eB-mAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="vRS-Bm-u8T">
+                    <connections>
+                        <action selector="doubleTapImage:" destination="xRs-AC-pnz" id="x5f-Vi-cMu"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1026" y="9"/>
+            <point key="canvasLocation" x="1024.8" y="8.5457271364317844"/>
         </scene>
     </scenes>
     <resources>
-        <image name="trash" catalog="system" width="60" height="64"/>
         <image name="xmark" catalog="system" width="64" height="56"/>
     </resources>
 </document>

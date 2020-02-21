@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7603649E23FF9C0A00992559 /* PreviewImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7603649D23FF9C0A00992559 /* PreviewImageViewController.swift */; };
 		761DBDA723F548FD00EE6055 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DBDA623F548FD00EE6055 /* AppDelegate.swift */; };
 		761DBDA923F548FD00EE6055 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761DBDA823F548FD00EE6055 /* SceneDelegate.swift */; };
 		761DBDAE23F548FD00EE6055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 761DBDAC23F548FD00EE6055 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7603649D23FF9C0A00992559 /* PreviewImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewImageViewController.swift; sourceTree = "<group>"; };
 		761DBDA323F548FD00EE6055 /* StudyToAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyToAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		761DBDA623F548FD00EE6055 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		761DBDA823F548FD00EE6055 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7603649F23FFA43800992559 /* Previewer */ = {
+			isa = PBXGroup;
+			children = (
+				7603649D23FF9C0A00992559 /* PreviewImageViewController.swift */,
+			);
+			path = Previewer;
+			sourceTree = "<group>";
+		};
 		761DBD9A23F548FD00EE6055 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +170,7 @@
 			children = (
 				76B904DF23FCB7EF00CB91D3 /* ImagePicker.storyboard */,
 				76B904E123FCB7FE00CB91D3 /* ImagePickerViewController.swift */,
+				7603649F23FFA43800992559 /* Previewer */,
 				76B904EA23FD2F8A00CB91D3 /* ImageViewer */,
 				76B904E523FCF1D000CB91D3 /* CustomCell */,
 			);
@@ -256,6 +267,7 @@
 			files = (
 				76B904E223FCB7FE00CB91D3 /* ImagePickerViewController.swift in Sources */,
 				76AA9BB323FA2183008581D0 /* LoginModel.swift in Sources */,
+				7603649E23FF9C0A00992559 /* PreviewImageViewController.swift in Sources */,
 				761DBDA723F548FD00EE6055 /* AppDelegate.swift in Sources */,
 				76B904DB23FB606000CB91D3 /* AccountInquiryModel.swift in Sources */,
 				76B904EC23FD327700CB91D3 /* ShowImageViewController.swift in Sources */,

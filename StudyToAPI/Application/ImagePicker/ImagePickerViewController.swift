@@ -49,14 +49,16 @@ extension ImagePickerViewController: UITableViewDelegate, UIImagePickerControlle
         if indexPath.row == imgArr.count {
             self.openLibrary()
         } else {
-            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageViewController") as! ShowImageViewController
+//            let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShowImageViewController") as! ShowImageViewController
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewImageViewController") as! PreviewImageViewController
             vc.modalPresentationStyle = .fullScreen
 
             guard imgArr[indexPath.row] != nil else {
                 return
             }
             
-            vc.previewImg = imgArr[indexPath.row]
+//            vc.previewImg = imgArr[indexPath.row]
+            vc.previewImage = imgArr[indexPath.row]
             self.present(vc, animated: true)
         }
     }
