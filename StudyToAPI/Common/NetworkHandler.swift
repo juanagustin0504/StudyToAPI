@@ -15,6 +15,8 @@ class NetworkHandler {
     
     static var shared: NetworkHandler = {
         sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = 120
+        sessionConfig.timeoutIntervalForResource = 120
         return sharedInstance
     }()
     
