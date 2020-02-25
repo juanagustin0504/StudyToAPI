@@ -16,6 +16,7 @@ class PreviewImageViewController: UIViewController {
 //            self.imageView.image = previewImage
 //        }
 //    }
+    @IBOutlet weak var navView: UIView!
     
     var imageScrollView: UIScrollView!
     var imageView: UIImageView!
@@ -29,11 +30,12 @@ class PreviewImageViewController: UIViewController {
         imageView = UIImageView(frame: imageScrollView.frame)
         imageView.image = previewImage
         imageView.isUserInteractionEnabled = true
-//        imageScrollView.insertSubview(imageView, at: 0)
         imageScrollView.addSubview(imageView)
         view.addSubview(imageScrollView)
         
         imageScrollView.delegate = self
+        
+        self.view.bringSubviewToFront(self.navView)
     }
     
     override func viewWillLayoutSubviews() {

@@ -122,6 +122,9 @@
                             <outletCollection property="gestureRecognizers" destination="bbM-1G-Qek" appends="YES" id="oLr-3x-Uvz"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="navView" destination="PIc-6t-B94" id="Z3E-mz-pvn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfS-eB-mAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer numberOfTapsRequired="2" id="bbM-1G-Qek">

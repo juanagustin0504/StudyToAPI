@@ -50,20 +50,13 @@ class NetworkHandler {
             guard let dataString = String(data: data, encoding: .utf8) else { return }
             guard let decodedDataString = dataString.removingPercentEncoding else { return }
             
-            let replaceString = decodedDataString.replacingOccurrences(of: "+", with: "")
-            
-//            guard let responseDictionary = self.convertToDictionary(jsonString: replaceString) else { return }
-//            print(responseDictionary)
-            
-            guard let dataResult = replaceString.data(using: .utf8) else { return }
+            guard let dataResult = decodedDataString.data(using: .utf8) else { return }
             do {
                 let responseObj = try JSONDecoder().decode(responseType, from: dataResult) // Json Objects and Response Missmatch
-//                print(responseObj)
                 completion(.success(responseObj))
                 return
             } catch {
                 let decodeError = NSError(domain: "Response mismatch with JSON object", code: 1001, userInfo: [:])
-//                print("_ERROR_: \(decodeError)")
                 completion(.failure(decodeError))
             }
             
@@ -71,19 +64,6 @@ class NetworkHandler {
         
         
     }
-    
-//    func request(api: String) -> URLRequest {
-//        var url: URL!
-//        var request: URLRequest!
-//
-//        url = URL(string: api)
-//        request = URLRequest(url: url)
-//
-//        request.httpMethod = "POST"
-//        request.httpBody = request.httpBody
-//
-//        return request
-//    }
 
     private func convertToDictionary(jsonString: String) -> [String:Any]? {
         guard let data = jsonString.data(using: .utf8) else {
