@@ -11,7 +11,6 @@ import Foundation
 class NetworkHandler {
     private static var sharedInstance = NetworkHandler()
     private static var sessionConfig: URLSessionConfiguration!
-    private static var session: URLSession!
     
     static var shared: NetworkHandler = {
         sessionConfig = URLSessionConfiguration.default
@@ -26,13 +25,17 @@ class NetworkHandler {
             return
         }
         
+        // 1. Session 생성
+        let session = URLSession(configuration: .default)
+        
+        // 2. 통신할 URL과 Request 객체 설정
         var request = URLRequest(url: URL)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")  // the request is JSON
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type") // the request is JSON
         request.httpMethod = "POST"
         request.httpBody = try? JSONEncoder().encode(body)
         
-        let session = URLSession(configuration: .default)
         
+        // 3. 사용할 Task를 결정하고, Completion Handler 작성
         session.dataTask(with: request) { (data, response, error) in
             if error != nil {
                 print("error: \(error!)")
@@ -60,7 +63,7 @@ class NetworkHandler {
                 completion(.failure(decodeError))
             }
             
-        }.resume()
+        }.resume() // 4. 해당 Task 실행, 5. Task 완료 후 Completion Handler 실행
         
         
     }
