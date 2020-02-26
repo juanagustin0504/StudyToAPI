@@ -18,8 +18,9 @@ class LoginViewModel {
         print("============================REQEUST============================")
         print(reqBody)
         
-        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct", body: reqBody, responseType: LoginModel.Response.self) { (result) in
-            
+        NetworkHandler.shared.fetch(api: "http://demo.jexframe.com/demo_login.jct",
+                                    body: reqBody,
+                                    responseType: LoginModel.Response.self) { (result) in
             switch result {
             case .failure(let error):
                 print(error)

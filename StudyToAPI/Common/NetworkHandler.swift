@@ -52,7 +52,6 @@ class NetworkHandler {
             
             guard let dataString = String(data: data, encoding: .utf8) else { return }
             guard let decodedDataString = dataString.removingPercentEncoding else { return }
-            
             guard let dataResult = decodedDataString.data(using: .utf8) else { return }
             do {
                 let responseObj = try JSONDecoder().decode(responseType, from: dataResult) // Json Objects and Response Missmatch
